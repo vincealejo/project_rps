@@ -17,3 +17,23 @@ function getHumanChoice() {
     return humanChoice;
 }
 
+function playRound(humanChoice, computerChoice) {
+    const humanChoiceLowerCased = humanChoice.toLowerCase();
+    const computerChoiceLowerCased = computerChoice.toLowerCase();
+    if(
+        humanChoiceLowerCased === "paper" && computerChoiceLowerCased === "rock" ||
+        humanChoiceLowerCased === "rock" && computerChoiceLowerCased === "scissors" ||
+        humanChoiceLowerCased === "scissors" && computerChoiceLowerCased === "paper" 
+    ) {
+        humanSCore++;
+        console.log(`${humanChoiceLowerCased.toUpperCase()} (winner) vs ${computerChoiceLowerCased.toUpperCase()}`);
+        console.log(`You: ${humanSCore} | Computer: ${computerScore}`);
+    } else if(humanChoiceLowerCased === computerChoiceLowerCased) {
+        console.log(`${humanChoiceLowerCased.toUpperCase()} (draw) vs ${computerChoiceLowerCased.toUpperCase()} (draw)`);
+        console.log(`You: ${humanSCore} | Computer: ${computerScore}`);
+    } else {
+        computerScore++
+        console.log(`${humanChoiceLowerCased.toUpperCase()} vs ${computerChoiceLowerCased.toUpperCase()} (winner)`);
+        console.log(`You: ${humanSCore} | Computer: ${computerScore}`);
+    }
+}
