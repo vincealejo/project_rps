@@ -37,3 +37,19 @@ function playRound(humanChoice, computerChoice) {
         console.log(`You: ${humanSCore} | Computer: ${computerScore}`);
     }
 }
+
+function playGame() {
+    const rounds = 5;
+    for(let i = 0; i < rounds; i++) {
+        playRound(getHumanChoice(), getComputerChoice());
+    }
+    if(humanSCore > computerScore) {
+        console.log("You Win!!")
+    } else if(computerScore > humanSCore) {
+        console.log("Computer Wins!!");
+    } else {
+        console.log("Draw!")
+    }
+}
+
+playGame();
